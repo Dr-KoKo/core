@@ -3,11 +3,12 @@ package hello.core.common;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Scope("request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Component
 public class MyLogger {
 
